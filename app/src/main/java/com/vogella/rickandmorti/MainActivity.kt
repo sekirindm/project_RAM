@@ -10,6 +10,7 @@ import com.vogella.rickandmorti.Model.Results
 import com.vogella.rickandmorti.Model.RickAndMortiInfo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
@@ -31,10 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getAllRAMList() {
-        mService.getCharacterList().enqueue(object :retrofit2.Callback<MutableList<RickAndMortiInfo>> {
+        mService.getCharacterList().enqueue(object : Callback <MutableList<Results>> {
             override fun onResponse(
-                call: Call<MutableList<RickAndMortiInfo>>,
-                response: Response<MutableList<RickAndMortiInfo>>
+                call: Call<MutableList<Results>>,
+                response: Response<MutableList<Results>>
             ) {
                 adapter = RickAndMortiAdapter(baseContext, response.body() as MutableList<Results>)
                 adapter.notifyDataSetChanged()
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            override fun onFailure(call: Call<MutableList<RickAndMortiInfo>>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<Results>>, t: Throwable) {
 
             }
 

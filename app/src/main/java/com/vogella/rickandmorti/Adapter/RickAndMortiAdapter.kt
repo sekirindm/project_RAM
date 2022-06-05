@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.vogella.rickandmorti.Model.Results
@@ -15,17 +16,18 @@ import com.vogella.rickandmorti.R
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class RickAndMortiAdapter(private val context: Context, private val rickAndMortiList: MutableList<Results>) :
-    RecyclerView.Adapter<RickAndMortiAdapter.MyViewHolder>() { //WAR
-
+    RecyclerView.Adapter<RickAndMortiAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
         val imageViewPersonAva: ImageView = itemView.imageViewPersonAva
-        val imageViewStatusColor: ImageView = itemView.imageViewStatusColor //WAR
+        val imageViewStatusColor: ImageView = itemView.imageViewStatusColor
         val textViewStatusLife: TextView = itemView.textViewStatusLife
         val textViewName: TextView = itemView.textViewName
 
+
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyViewHolder {
+
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
         return MyViewHolder(itemView)
     }
