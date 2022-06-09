@@ -15,9 +15,11 @@ import com.vogella.rickandmorti.Model.RickAndMortiInfo
 import com.vogella.rickandmorti.R
 import kotlinx.android.synthetic.main.item_layout.view.*
 
-class RickAndMortiAdapter(private val context: Context, private val rickAndMortiList: MutableList<Results>) :
-    RecyclerView.Adapter<RickAndMortiAdapter.MyViewHolder>() {
+class RickAndMortiAdapter(private val context: Context, private val rickAndMortiList: List<Results>) :    RecyclerView.Adapter<RickAndMortiAdapter.MyViewHolder>() {
+
     class MyViewHolder(itemView: View, ) : RecyclerView.ViewHolder(itemView){
+
+
         val imageViewPersonAva: ImageView = itemView.imageViewPersonAva
         val imageViewStatusColor: ImageView = itemView.imageViewStatusColor
         val textViewStatusLife: TextView = itemView.textViewStatusLife
@@ -32,13 +34,14 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyViewHolder {
         return MyViewHolder(itemView)
     }
 
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
    val listItem = rickAndMortiList[position]
 
-        holder.textViewName.text = rickAndMortiList[position].name
-        holder.textViewStatusLife.text = rickAndMortiList[position].status
-        Picasso.get().load(rickAndMortiList[position].image).into(holder.imageViewPersonAva)
+        holder.textViewName.text = listItem.name
+        holder.textViewStatusLife.text = listItem.status
+        Picasso.get().load(listItem.image).into(holder.imageViewPersonAva)
 
 
 

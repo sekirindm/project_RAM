@@ -32,18 +32,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getAllRAMList() {
-        mService.getCharacterList().enqueue(object : Callback <MutableList<Results>> {
+        mService.getCharacterList().enqueue(object : Callback <RickAndMortiInfo> {
             override fun onResponse(
-                call: Call<MutableList<Results>>,
-                response: Response<MutableList<Results>>
+                call: Call<RickAndMortiInfo>,
+                response: Response<RickAndMortiInfo>
             ) {
-                adapter = RickAndMortiAdapter(baseContext, response.body() as MutableList<Results>)
+                val rickAndMortiInfo =  response.body() as  RickAndMortiInfo
+                val results = rickAndMortiInfo.results
+
+                adapter = RickAndMortiAdapter(baseContext, results)
                 adapter.notifyDataSetChanged()
                 recyclerList.adapter = adapter
 
             }
 
-            override fun onFailure(call: Call<MutableList<Results>>, t: Throwable) {
+            override fun onFailure(call: Call<RickAndMortiInfo>, t: Throwable) {
 
             }
 

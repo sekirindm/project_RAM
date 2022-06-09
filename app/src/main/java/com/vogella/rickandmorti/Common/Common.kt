@@ -7,5 +7,5 @@ import com.vogella.rickandmorti.Model.RickAndMortiInfo
 object Common {
     private val BASE_URL = "https://rickandmortyapi.com/api/"
     val rickAndMortiServices : RickAndMortiServices
-        get()= RickAndMortiClient.getClient(BASE_URL).create(rickAndMortiServices::class.java)
+        get()= RickAndMortiClient.getClient(BASE_URL).create(RickAndMortiServices::class.java)
 }
