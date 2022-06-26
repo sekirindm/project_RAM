@@ -2,6 +2,7 @@ package com.vogella.rickandmorti.Model
 
 import android.icu.text.IDNA
 import com.google.gson.annotations.SerializedName
+import java.lang.reflect.Array
 
 data class RickAndMortiInfo(
     @SerializedName("info") val info: Info,
@@ -26,5 +27,16 @@ data class Results(
     @SerializedName("gender") val gender: String,
     @SerializedName("image") val image: String,
     @SerializedName("url") val url: String,
-    @SerializedName("created") val created: String
+    @SerializedName("created") val created: String,
+    @SerializedName("location") val location: Location,
+    @SerializedName("origin") val origin: Origin
+
+)
+
+data class Location(
+    @SerializedName("name") val name: String
+)
+
+data class Origin(
+    @SerializedName("name") val name: String
 )
