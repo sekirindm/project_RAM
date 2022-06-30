@@ -39,10 +39,6 @@ class MainActivityDescriptions : AppCompatActivity() {
         val species = intent.getStringExtra("species")
         textViewSpeciesDescr.text = species
 
-//        val image = intent.getStringExtra("image")
-//        Picasso.get().load(image).into(imageViewStatusDescrRed)
-//        Picasso.get().load(image).into(imageViewStatusDescrGreen)
-//        Picasso.get().load(image).into(imageViewStatusDescrWhite)
 
         bindStatusNewActivity(status)
 
@@ -50,29 +46,21 @@ class MainActivityDescriptions : AppCompatActivity() {
 
     }
 
-//    fun bind1(results: Results) {
-//        val lifeStatusDescriptions = results.status
-//        bindStatusNewActivity(lifeStatusDescriptions)
-//    }
-//
     fun bindStatusNewActivity(status: String) {
-        when {
+        val imageStatus = when {
             status.lowercase() == "alive" -> {
-                imageViewStatusDescrGreen.visibility = View.VISIBLE
-                imageViewStatusDescrRed.visibility = View.GONE
-                imageViewStatusDescrWhite.visibility = View.GONE
+                R.drawable.image_status_green
             }
             status.lowercase() == "dead" -> {
-                imageViewStatusDescrGreen.visibility = View.GONE
-                imageViewStatusDescrRed.visibility = View.VISIBLE
-                imageViewStatusDescrWhite.visibility = View.GONE
+                R.drawable.image_status_red
             }
             else -> {
-                imageViewStatusDescrGreen.visibility = View.GONE
-                imageViewStatusDescrRed.visibility = View.GONE
-                imageViewStatusDescrWhite.visibility = View.VISIBLE
+                R.drawable.image_status_white
             }
+
         }
+//            Picasso.get().load(imageStatus).into(imageViewStatusGreen)
+        imageViewStatusDescrGreen.setImageResource(imageStatus)
 
     }
 

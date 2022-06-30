@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#363636"
+    android:background="#3E3E3E"
     tools:context=".MainActivityDescriptions">
 
 
@@ -130,32 +130,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNameDescriptions"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageViewStatusDescrRed"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewPersonAvaDescriptions"
-        app:layout_constraintEnd_toStartOf="@+id/textViewStatusDescrLife"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameDescriptions"
-        app:layout_constraintVertical_bias="0.111"
-        app:srcCompat="@drawable/image_status_red" />
 
-    <ImageView
-        android:id="@+id/imageViewStatusDescrWhite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewPersonAvaDescriptions"
-        app:layout_constraintEnd_toStartOf="@+id/textViewStatusDescrLife"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameDescriptions"
-        app:layout_constraintVertical_bias="0.13"
-        app:srcCompat="@drawable/image_status_white" />
 
     <ImageView
         android:id="@+id/imageView3"

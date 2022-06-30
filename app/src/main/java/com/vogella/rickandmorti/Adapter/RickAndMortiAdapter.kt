@@ -1,6 +1,7 @@
 package com.vogella.rickandmorti.Adapter
 
 import android.content.Context
+import android.graphics.LinearGradient
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
@@ -31,15 +32,11 @@ class RickAndMortiAdapter(
 
         val imageViewPersonAva: ImageView = itemView.imageViewPersonAva
         val textViewStatusLife: TextView = itemView.textViewStatusLife
-        val textViewName: TextView = itemView.textViewName
+        var textViewName: TextView = itemView.textViewName
         var imageViewStatusGreen: ImageView = itemView.imageViewStatusGreen
         val textViewSpecies: TextView = itemView.textViewSpecies
         val textViewLastLocation: TextView = itemView.textViewLastLocation
         val textViewOriginInfor: TextView = itemView.textViewOriginInfor
-//        val imageViewStatusDescrWhite: ImageView = itemView.imageViewStatusDescrWhite
-//        val imageViewStatusDescrRed: ImageView = itemView.imageViewStatusDescrRed
-//        val imageViewStatusDescrGreen: ImageView = itemView.imageViewStatusDescrGreen
-
 
         fun bind(results: Results) {
             textViewName.text = results.name
@@ -68,89 +65,26 @@ class RickAndMortiAdapter(
 
             }
 
-//
-//            val statusLife =
-//                if (isAlive)
-//                    statusColorRed
-
-
-//        val isAlive: Boolean =
-//            if (lifeStatus.lowercase() == "alive")
-//                true
-//            else
-//                false
-
-
-//
-//        val statusImage =
-//            if (isAlive)
-//                R.drawable.image_status_green
-//        else
-//            R.drawable.image_status_red
-
-
-//
-//        if (isAlive) {
-////            Picasso.get().load(R.drawable.image_status_green).into(holder.imageViewStatusGreen)
-//
-//            holder.imageViewStatusGreen.visibility = View.VISIBLE
-//            holder.imageViewStatusRed.visibility = View.GONE
-//
-//        } else {
-//
-//            holder.imageViewStatusGreen.visibility = View.GONE
-//            holder.imageViewStatusRed.visibility = View.VISIBLE
-//
-//
-//
-//
-////            Picasso.get().load(R.drawable.image_status_red).into(holder.imageViewStatusRed)
-//        }
         }
 
         ////
         fun bindStatus(status: String) {
             val imageStatus = when {
                 status.lowercase() == "alive" -> {
-                    R.drawable.image_status_green
+                    drawable.image_status_green
                 }
                 status.lowercase() == "dead" -> {
-                    R.drawable.image_status_red
+                    drawable.image_status_red
                 }
                 else -> {
-                    R.drawable.image_status_white
+                    drawable.image_status_white
                 }
 
             }
-            Picasso.get().load(imageStatus).into(imageViewStatusGreen)
+//            Picasso.get().load(imageStatus).into(imageViewStatusGreen)
+            imageViewStatusGreen.setImageResource(imageStatus)
 
         }
-
-//        fun bindStatusNewActivity(status: String) {
-//            when {
-//                status.lowercase() == "alive" -> {
-//                    if (lifeStatus.lowercase() == "alive") {
-//                    Picasso.get().load(R.drawable.image_status_green)
-//
-//                } else if (lifeStatus.lowercase() == "dead") {
-//                    Picasso.get().load(R.drawable.image_status_red)
-//                } else {
-//                    Picasso.get().load(R.drawable.image_status_white)
-//                }
-//                }
-//                status.lowercase() == "dead" -> {
-//                    imageViewStatusDescrGreen.visibility = View.GONE
-//                    imageViewStatusDescrRed.visibility = View.VISIBLE
-//                    imageViewStatusDescrWhite.visibility = View.GONE
-//                }
-//                else -> {
-//                    imageViewStatusDescrGreen.visibility = View.GONE
-//                    imageViewStatusDescrRed.visibility = View.GONE
-//                    imageViewStatusDescrWhite.visibility = View.VISIBLE
-//                }
-//            }
-//
-//        }
 
     }
 
@@ -187,4 +121,6 @@ class RickAndMortiAdapter(
 
 
     }
+
 }
+

@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/last_known_location"
-            android:textColor="#8F8E8E"
+            android:textColor="#BCBCBC"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/imageViewPersonAva"
             app:layout_constraintTop_toBottomOf="@+id/textViewStatusLife" />
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="@string/first_seen_in"
-            android:textColor="#8F8E8E"
+            android:textColor="#BCBCBC"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.065"

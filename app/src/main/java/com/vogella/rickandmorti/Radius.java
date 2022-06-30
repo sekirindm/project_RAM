@@ -1,5 +1,8 @@
 package com.vogella.rickandmorti;
 
-public class Radius {
-    public int a = 5;
-}
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.widget.TextView;
+
+
